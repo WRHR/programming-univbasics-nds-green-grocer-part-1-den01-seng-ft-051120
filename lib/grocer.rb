@@ -2,7 +2,7 @@ def find_item_by_name_in_collection(name, collection)
   # Implement me first!
   #
   # Consult README for inputs and outputs
-  collection.select{|item| collection[:item] == name}
+  collection.select{|| collection[:item] == name}
 end
 
 def consolidate_cart(cart)
