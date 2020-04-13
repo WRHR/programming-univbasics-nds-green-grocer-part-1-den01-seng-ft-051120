@@ -18,10 +18,20 @@ def consolidate_cart(cart)
   new_cart = []
   
   cart.each do |grocery_item| 
-    while index < cart.length do 
-      
-      index += 1 
-    end
+    current_item = find_item_by_name_in_collection(grocery_item[:item], new_cart)
+    if current_item 
+      new_cart_index = 0 
+      new_cart.each do |item_in_new_cart|
+        if item_in_new_cart[:item] === current_item[:item]
+          item_in_new_cart[:item] += 1
+        end
+        new_cart_index += 1 
+      end
+    else 
+      grocery_item[:count] = 1
+      new_cart << grocery_item
+    end 
+    index += 1 
   end
   new_cart
 end
