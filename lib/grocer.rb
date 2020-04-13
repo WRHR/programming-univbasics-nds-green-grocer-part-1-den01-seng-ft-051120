@@ -23,7 +23,7 @@ def consolidate_cart(cart)
       new_cart_index = 0 
       new_cart.each do |item_in_new_cart|
         if item_in_new_cart[:item] === current_item[:item]
-          item_in_new_cart[:item] += 1
+          item_in_new_cart[:count] += 1
         end
         new_cart_index += 1 
       end
